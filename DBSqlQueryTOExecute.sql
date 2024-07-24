@@ -11,9 +11,10 @@ passwords varchar(50) not null ,
 isactive bit not null 
 )
 go
+
 insert into ms_user values (newID(),'jhonUmiro','admin1*',1)
 insert into ms_user values (newID(),'trisNatan','admin2@',1)
-insert into ms_user values (newID(),'hugoRess','admin3#',1)
+insert into ms_user values (newID(),'hugoRess','admin3#',0)
 go
 create table ms_storage_location(
 location_id varchar(10) not null primary key,

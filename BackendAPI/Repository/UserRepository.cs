@@ -45,7 +45,7 @@ namespace BackendAPI.Repository
         {
             var users = _dbContext.MsUsers.FirstOrDefaultAsync(u => u.UserNames == username);
 
-            if (users == null)
+            if (users != null)
             {
                 return true;
             }

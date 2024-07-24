@@ -55,9 +55,7 @@ namespace BackendAPI.Controllers
         {
             try
             {
-                var checkAvail = _iUsersRepo.CheckUsernameAvail(user.username);
-                if (checkAvail == true)
-                {
+
                     var data = await _iUsersRepo.GetTaskByIdAsync(user.username, user.password);
                     if (data != null) {
                         HttpContext.Session.SetString("username", user.username);
@@ -79,16 +77,6 @@ namespace BackendAPI.Controllers
                         };
                     }
 
-                }
-                else
-                {
-                    return new ApiResponseObj
-                    {
-                        data = null,
-                        message = "Username/Password salah!!",
-                        status = false
-                    };
-                }
 
             }
             catch (Exception ex)

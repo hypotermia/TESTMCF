@@ -67,3 +67,4 @@ E:\LearnProject\BackendAPI\BackendAPI\obj\Debug\net6.0\refint\BackendAPI.dll
 E:\LearnProject\BackendAPI\BackendAPI\obj\Debug\net6.0\BackendAPI.pdb
 E:\LearnProject\BackendAPI\BackendAPI\obj\Debug\net6.0\BackendAPI.genruntimeconfig.cache
 E:\LearnProject\BackendAPI\BackendAPI\obj\Debug\net6.0\ref\BackendAPI.dll
+E:\LearnProject\BackendAPI\BackendAPI\obj\Debug\net6.0\BackendAPI.sourcelink.json
