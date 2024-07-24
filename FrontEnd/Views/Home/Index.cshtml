@@ -1,0 +1,82 @@
+﻿@model IEnumerable<FrontEnd.Models.TrBpkb>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome, @ViewData["Username"]!</h1>
+    <p>Welcome to your application home page.</p>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Agreement Number</th>
+            <th>No. BPKB </th>
+            <th>Branch Id</th>
+            <th>Tanggal BPKB</th>
+            <th>No.Faktur</th>
+            <th>Tanggal Faktur</th>
+            <th>Lokasi Penyimpanan</th>
+            <th>Nomor Polisi</th>
+            <th>Tanggal BPKB in</th>
+            <th>Created By</th>
+            <th>Created Date</th>
+            <th>Last Update By</th>
+            <th>Last Update Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Agreementnumber</td>
+                <td>@item.BpkbNo</td>
+                <td>@item.BranchId</td>
+                <td>@item.BpkbDate</td>
+                <td>@item.FakturNo</td>
+                <td>@item.FakturDate</td>
+                <td>@item.LocationId</td>
+                <td>@item.PoliceNo</td>
+                <td>@item.BpkbDateIn</td>
+                <td>@item.CreatedBy</td>
+                <td>@item.CreatedOn</td>
+                <td>@item.LastUpdatedBy</td>
+                <td>@item.LastUpdatedOn</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Agreementnumber">Edit</a> |
+                    <button type="button" class="btn btn-danger" onclick="deleteBpkb('@item.Agreementnumber')">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Create New</a>
+@section Scripts {
+    <script>
+        function deleteBpkb(id) {
+            if (confirm("Are you sure you want to delete this record?")) {
+                $.ajax({
+                    url: '@Url.Action("Delete", "Home")',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (response) {
+                        if (response.success) {
+                            alert(response.message);
+                            $("#row-" + id).remove();
+                            window.location.href = '@Url.Action("Index", "Home")';
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert("An error occurred while deleting the record.");
+                    }
+                });
+            }
+        }
+
+    </script>
+    }

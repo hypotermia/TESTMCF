@@ -1,0 +1,64 @@
+﻿<!-- Views/Bpkb/Create.cshtml -->
+@model FrontEnd.Models.BpkbViewModel
+
+@{
+    ViewData["Title"] = "Create BPKB";
+}
+
+<h2>Create New Data</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Bpkb.Agreementnumber" class="control-label">Agreement Number</label>
+        <input asp-for="Bpkb.Agreementnumber" class="form-control" />
+        <span asp-validation-for="Bpkb.Agreementnumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Bpkb.BranchId" class="control-label">Branch Id</label>
+        <input asp-for="Bpkb.BranchId" class="form-control" />
+        <span asp-validation-for="Bpkb.BranchId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Bpkb.BpkbNo" class="control-label">No. BPKB</label>
+        <input asp-for="Bpkb.BpkbNo" class="form-control" />
+        <span asp-validation-for="Bpkb.BpkbNo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Bpkb.BpkbDateIn" class="control-label">Tanggal BPKB In</label>
+        <input asp-for="Bpkb.BpkbDateIn" class="form-control" />
+        <span asp-validation-for="Bpkb.BpkbDateIn" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Bpkb.BpkbDate" class="control-label">Tanggal BPKB</label>
+        <input asp-for="Bpkb.BpkbDate" class="form-control" />
+        <span asp-validation-for="Bpkb.BpkbDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Bpkb.FakturNo" class="control-label">No. Faktur</label>
+        <input asp-for="Bpkb.FakturNo" class="form-control" />
+        <span asp-validation-for="Bpkb.FakturNo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Bpkb.FakturDate" class="control-label">Tanggal Faktur</label>
+        <input asp-for="Bpkb.FakturDate" class="form-control" />
+        <span asp-validation-for="Bpkb.FakturDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Bpkb.PoliceNo" class="control-label">Nomor Polisi</label>
+        <input asp-for="Bpkb.PoliceNo" class="form-control" />
+        <span asp-validation-for="Bpkb.PoliceNo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Bpkb.LocationId" class="control-label">Lokasi Penyimpanan</label>
+        <select asp-for="Bpkb.LocationId" class="form-control" asp-items="@(new SelectList(Model.Locations, "LocationId", "LocationName"))"></select>
+        <span asp-validation-for="Bpkb.LocationId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

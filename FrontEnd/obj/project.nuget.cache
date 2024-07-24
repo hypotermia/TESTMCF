@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "O5Oi5Bd/peEJW24atl9VtZMqQmkMotWiGj8Fno3OSNXiboQYRP0nunvFS+kl2Me9rRwgTjoRr9/oDUsYnNaXcg==",
+  "success": true,
+  "projectFilePath": "E:\\LearnProject\\BackendAPI\\FrontEnd\\FrontEnd.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ZAKKI\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
